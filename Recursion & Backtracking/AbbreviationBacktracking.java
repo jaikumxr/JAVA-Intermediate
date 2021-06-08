@@ -12,8 +12,12 @@ public class AbbreviationBacktracking {
             }
             return;
         } 
-        solution(str, asf+count+str.charAt(pos), 0, pos+1);
-        solution(str, asf, count++, pos+1);
+        if(count>0){
+            solution(str, asf+count+str.charAt(pos), 0, pos+1);
+        } else {
+            solution(str, asf+str.charAt(pos), 0, pos+1);
+        }
+        solution(str, asf, count+1, pos+1);
 
     }
 	public static void main(String[] args) {
